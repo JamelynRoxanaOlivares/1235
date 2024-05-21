@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD de Imágenes</title>
+    <link rel="stylesheet" href="../rcourses/css/image.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo">
+        <h1>CRUD de Imágenes</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="#">Opciones</a>
+                    <ul>
+                        <li><a href="/opcion1">Opción 1</a></li>
+                        <li><a href="/opcion2">Opción 2</a></li>
+                        <li><a href="/opcion3">Opción 3</a></li>
+                    </ul>
+                </li>
+                <li><a href="/contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <form id="imageForm" enctype="multipart/form-data" method="POST" action="upload.php">
+                <label for="category">Categoría:</label>
+                <select id="category" name="category">
+                    <option value="encabezado">Encabezado</option>
+                    <option value="pie">Pie de pagina</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <label for="image">Subir Imagen:</label>
+                <input type="file" id="image" name="image" required>
+                <button type="submit">Guardar</button>
+            </form>
+            <table id="imageTable">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Imagen</th>
+                        <th>Fecha</th>
+                        <th>Opciones</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se mostrarán las imágenes guardadas -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 CRUD de Imágenes. Todos los derechos reservados.</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>

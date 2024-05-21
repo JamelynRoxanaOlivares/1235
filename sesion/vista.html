@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iniciar Sesión</title>
+<link rel="stylesheet" href="/rcourses/css/sesion.css">
+</head>
+<body>
+
+<header>
+  <div class="header-section">
+    <img src="/rcourses/img/nuevo-logo-del-aifa-foto-removebg-preview.png" alt="Imagen 1">
+
+  </div>
+ 
+</header>
+
+<div class="container">
+  <div class="left-side">
+    <h2>Iniciar Sesión</h2>
+    <form id="loginForm" action="#">
+      <input type="text" id="username" name="usuario" placeholder="Usuario" required>
+      <input type="password" id="password" name="contraseña" placeholder="Contraseña" required>
+      <input type="submit" value="Iniciar Sesión">
+    </form>
+    <br><br><br>
+  </div>
+  <div class="right-side"></div>
+</div>
+
+<footer>
+  <p>Direccion de operacion 
+  <p>Coordinacion del sistema BHS y aeropasillos</p></footer>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Evita que el formulario se envíe
+    
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    
+    // Verifica si el usuario y la contraseña son correctos
+    if (username === "coordinacion" && password === "12345") {
+        // Redirecciona al usuario a otra página
+        window.location.href = "/Registration/registration.php";
+    } else {
+        // Si el usuario y la contraseña son incorrectos, muestra un mensaje de error
+        alert("Usuario o contraseña incorrectos. Por favor, inténtelo de nuevo.");
+        
+        // Limpia los campos de usuario y contraseña
+        document.getElementById("username").value = "";
+        document.getElementById("password").value = "";
+    }
+});
+
+window.addEventListener("beforeunload", function(event) {
+    // Limpia los campos de usuario y contraseña al salir de la página
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+});
+</script>
+
+</body>
+</html>
